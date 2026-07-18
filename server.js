@@ -11,7 +11,7 @@ app.get("/", async (req, res) => {
     // Wait for 10 seconds
     await new Promise(resolve => setTimeout(resolve, 10000));
 
-    res.send("🚀 Hello from Cloud Run CI/CD! This is Anvith");
+    res.send(`Hello from ${process.env.HOSTNAME}`);
 
 });
 
