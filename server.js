@@ -4,8 +4,15 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+
+    console.log("Request received...");
+
+    // Wait for 10 seconds
+    await new Promise(resolve => setTimeout(resolve, 10000));
+
     res.send("🚀 Hello from Cloud Run CI/CD! This is Anvith");
+
 });
 
 app.get("/health", (req, res) => {
